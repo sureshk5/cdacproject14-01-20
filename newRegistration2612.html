@@ -1,0 +1,96 @@
+
+<html>
+<head>
+	<title>Form Validation</title>
+	<script type="text/javascript" src="./static/userjava.js"></script>
+	<link rel="stylesheet" type="text/css" href="./static/user.css">
+	<script type="text/javascript" src="./static/jquery-3.4.1.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script> 
+$(document).ready(function(){
+			$("div").hide();
+			$("a:eq(0)").click(function(){
+				
+				$("div:eq(2)").toggle();
+			})
+			$("a:eq(1)").click(function(){
+			
+				$("div:eq(3)").toggle();
+			})
+		});
+	</script>
+</head>
+<body>
+	<h1>Welcome to Path finder</h1>
+	<h2>Please find the details below!</h2>
+	<a href="#">Register</a>
+	<a href="#">login</a>
+	<div>click here</div>
+	<div>Login User</div>
+	<div>
+	<form action="/Home"name="registration" onSubmit="return validation();" id="form">
+		<fieldset>   <!--0th element-->
+			<legend style="align:center;">Personal Detail</legend></br>
+				<label>First Name:</label></br>
+				<input type="text" placeholder="First Name" name="fname" id="fname"></input></br> <!--1 element-->
+				<label>Last Name:</label></br>
+				<input type="text" placeholder="Last Names" name="lname"></input></br> <!--2 element-->
+				<label>Gender</label></br>
+				<select name="gname"> <!--3 element-->
+				<option selected="" value="Default">Select</option>
+				<option>Male</option>
+                <OPTION>Female</OPTION></select></br>               
+                <label>AddressProof</label></br>
+				<select name="address"> <!--4 element-->
+				<option selected="" value="Default">Select</option>
+                <option>AADHAR</option>
+                <OPTION>VOTERID</OPTION>
+                <OPTION>PASSPORT</OPTION>
+				<OPTION>PANCARD</OPTION></select></br> 
+                
+                <input type="text" name="address" id="color" style='display:none;'/> <!--5 element-->
+                <label>Contact Number</label></br>
+                <input type="text" placeholder="Mobile Number" name="number"></input> <!--6 element-->
+
+                <label>Email</label>
+                <label id="lbl" style="color: red;visibility: hidden;">Invalid</label>  
+                <input type="text" placeholder="Email" name="email"></input>  <!--7 element-->
+
+				<label>User Name</label></br>
+				<input type="text" placeholder="User Name" name="uname" id="uname"></input></br> <!--8 element-->
+				<label>Password:</label></br>
+				<input type="password" placeholder=" Password" name="password"></input></br> <!--9 element-->
+				<label>ReType Password</label></br>
+				<input type="password" placeholder="Retype password" name="reTypepassword"></input></br> <!--10 element-->
+
+
+
+
+
+                <label>One Time Password</label>
+                <label id="lbltext" style="color: red;visibility: hidden;">Invalid</label>
+                <input type="text" placeholder="OTP" name="otp"></input>  <!--11 element-->
+
+				<input type="submit" value="Submit" name="Submit" onclick="getValues()"></input> <!--12 element-->
+		</fieldset>
+		</form>
+	</div>
+   <div>
+	<form style="border: 2 solid black;" id="form2">
+		<fieldset>   <!--0th element-->
+			<legend style="align:center;">Login Yourself</legend></br>
+				<label>User Name</label></br>
+				<input type="text" placeholder="User Name" name="uname"></input></br> <!--1 element-->
+				<label>Password</label></br>
+				<input type="password" placeholder="Password"></input></br> <!--2 element-->				
+				<input type="submit" value="Submit" name="Submit" onclick="loginVerification()"></input> <!--9 element-->
+		</fieldset>
+		</form> 
+		<span id="span" style="border: 2,solid black; background-color: cadetblue;"></span>
+   </div>
+</body>
+</html>
